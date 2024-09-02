@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12</title>
+</head>
+<body>
+    <select id="select_tabuada">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select><br>
+    Até qual número a tabuada deve ser construída: <input type="text" id="input_numero"><br>
+    <button onclick="tabuada()">Ver Tabuada</button><br>
+    <div id="div_tabuada"></div><br>
+</body>
+</html>
+
+<script>
+    function tabuada() {
+        div_tabuada.innerHTML = "";
+        var selec = select_tabuada.value;
+        var numero = Number(input_numero.value);
+        var contador = 0;
+        for (let i = 0; i <= numero; i++) {
+            if (i % 2 == 0) {
+                div_tabuada.innerHTML += `<span style="color: blue;"> ${selec} x ${i} = ${selec * i}</span><br>`;
+            } else {
+                div_tabuada.innerHTML += `<span style="color: red;"> ${selec} x ${i} = ${selec * i}<br></span>`;
+            }
+        }
+    }
+</script>

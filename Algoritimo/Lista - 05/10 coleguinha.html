@@ -1,0 +1,61 @@
+<!-- 1.	Faça um programa onde informe o nível de poder para cada joia do infinito que ela possuir. 
+a)	Solicite o número de joias do infinito que possuir 
+b)	Ao clicar em “ Qual o meu poder ” dizer ao usuário:
+c)	Caso ele não tenha nenhuma exiba “Até mesmo o gavião arqueiro te sola, você é fraco... te falta ódio!!!”
+d)	Caso tenha 1 joia exiba “Você é um ser extremante poderoso”
+e)	Caso tenha 2 joias exiba “Você pode destruir um planeta inteiro sozinho”
+f)	Caso tenha 3 joias exiba “Você está no mesmo nível de uma entidade cósmica”
+g)	Caso tenha 4 joias exiba “A derrota é um sentimento que você nunca mais sentira, o universo está na palma da sua mão”
+h)	Caso tenha 5 joias exiba “ Parabéns você agora é um deus, com um estalar de dedos seus maiores desejos se tornarão realidade”
+i)	Caso o usuário digite uma quantidade maior que 6 joias exiba “Parece que alguém está tentando me enganar, só existem no total 5 joias!!! Sou uma piada para você...”  
+Nome: Ryan Miranda Barbosa -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantas joias do infinito você possui? <input type="text" id="input_joias"><br>
+    <button onclick="calculo ()">Ver poder</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+
+</html>
+
+<script>
+    function calculo() {
+        var joias = Number(input_joias.value);
+        if (joias <= 0) {
+            div_mensagem.innerHTML = `Até mesmo o gavião arqueiro te sola, você é fraco... te falta ódio!!!`
+        } else {
+            if (joias == 1) {
+                div_mensagem.innerHTML = `Você é um ser extremante poderoso`
+            }
+            else {
+                if (joias == 2) {
+                    div_mensagem.innerHTML = `Você pode destruir um planeta inteiro sozinho`
+                } else {
+                    if (joias == 3) {
+                        div_mensagem.innerHTML = `Você está no mesmo nível de uma entidade cósmica`
+                    } else {
+                        if (joias == 4) {
+                            div_mensagem.innerHTML = `A derrota é um sentimento que você nunca mais sentira, o universo está na palma da sua mão`
+                        } else {
+                            if (joias == 5) {
+                                div_mensagem.innerHTML = `Parabéns você agora é um deus, com um estalar de dedos seus maiores desejos se tornarão realidade`
+                            } else {
+                                if (joias >= 6) {
+                                    div_mensagem.innerHTML = `Parece que alguém está tentando me enganar, só existem no total 5 joias!!! Sou uma piada para você...`
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>

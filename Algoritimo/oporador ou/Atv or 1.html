@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+<body>
+    Nome da fruta que chegou na mesa: <input type="text" id="input_nome_fruta"><br>
+    <button onclick="analisar ()">Vai comer?</button><br>
+</body>
+</html>
+
+<script>
+    function analisar () {
+        var nome = input_nome_fruta.value;
+        if (nome == "abacaxi" || nome == "uva") {
+            alert(`Sim, vai comer ${nome}`);
+        } else {
+            alert(`A fruta ${nome} ela não come`);
+        }
+    }
+</script>

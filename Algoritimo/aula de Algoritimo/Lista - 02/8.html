@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual seu nome jovem guerreiro: <input id="input_guerreiro" type="text"> <br>
+    Qual seu KI normal? <input id="input_KI" type="text"> <br>
+    <button onclick="SS ()">Ver ki em cada forma</button>
+</html>
+
+<script>
+
+function SS () {
+    var guerreiro = input_guerreiro.value;
+    var KI = input_KI.value;
+    var SSj = KI * 50;
+    var SSj2 =  KI * 100;
+    alert("guerreiro " + guerreiro + " seu incrivel KI na forma SS é " + SSj);
+    alert("guerreiro " + guerreiro + " seu incrivel KI na forma SS2 é " + SSj2);
+}
+</script>

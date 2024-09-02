@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores</title>
+</head>
+<body>
+    Fruta: <input type="text" id="input_fruta"><br>
+    <button onclick="adicionar ()">Adicionar Fruta</button><br>
+    <div id="div_frutas"></div><br>
+</body>
+</html>
+
+<script>
+    var listaFruta = ["maçã", "banana"]; //var global para mantes o valor.
+    
+    function exibir () {
+        div_frutas.innerHTML = listaFruta; 
+    }
+
+    function adicionar () {
+        var fruta = input_fruta.value;
+        listaFruta.push(fruta); //adiciona valor fruta na variavel global, como se fosse um += só que no indice 
+    }
+</script> <!-- section storege 

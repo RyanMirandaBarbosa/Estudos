@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de depósitos: <input type="text" id="input_quantidade_deposito"><br>
+    Valor depósito: <input type="text" id="input_valor_deposito"><br>
+    <button onclick="deposito ()">Acompanhar grana</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+</html>
+
+<script>
+    function deposito () {
+        var qtDeposito = Number(input_quantidade_deposito.value);
+        var valorDeposito = Number(input_valor_deposito.value);
+        var contador = 0;
+        div_mensagem.innerHTML = "";
+        var valorMes = 0; // var auxiliar
+        while (contador < qtDeposito) {
+            valorMes += valorDeposito; // adicionando valor do depósito na var
+            contador = contador + 1;
+            if (contador % 3 == 0) { // função a cada 3 mês
+                valorMes = valorMes * 1.01; // adiciona bônus de 1%
+                div_mensagem.innerHTML += `${contador}° Mês: ${valorMes}<br>`;
+            } else {
+                div_mensagem.innerHTML += `${contador}° Mês: ${valorMes}<br>`;
+            }
+        }
+    }
+</script>

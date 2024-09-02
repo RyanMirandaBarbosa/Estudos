@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+<body>
+    <button onclick="dado()">jogar dado</button><br>
+    <div id="div_dado"></div>
+</body>
+</html>
+<script>
+    function dado() {
+        var aleatorio = Math.random() * 20;
+        aleatorio = Number(aleatorio.toFixed(0));
+        div_dado.innerHTML = `<span style="width: 100px; background-color: #474747; height: 100px; display: flex; justify-content: center; align-items: center; color: white; border-radius: 25px; border: solid 3px;">${aleatorio}</span>`;
+    }
+</script>

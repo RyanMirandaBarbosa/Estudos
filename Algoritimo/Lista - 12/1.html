@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+<body>
+    <button onclick="sorteio()">Sortear</button><br>
+    <div id="div_sorteio"></div>
+</body>
+</html>
+
+<script>
+    function sorteio() {
+        var aleatório = Math.random();
+        aleatório = Number(aleatório.toFixed(4))
+        if (aleatório > 0.5) {
+            div_sorteio.innerHTML = `${aleatório}. Eu arredondaria para 1`;
+        } else {
+            div_sorteio.innerHTML = `${aleatório}. Eu arredondaria para 0`;
+        }
+    }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+</head>
+<body>
+    Cadastrar filme <input type="text" id="input_filme">
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <div id="div_filme"></div><br>
+</body>
+</html>
+
+<script>
+    var listaFilme = [];
+
+    function cadastrar() {
+        var filme = input_filme.value;
+        listaFilme.push(filme);
+        var tamanhoLista = listaFilme.length;
+        var filmeFavorito = "";
+        var terceiroFilmeFavorito = "Ainda não existe";
+        for (var i = 0; i < tamanhoLista; i++) {
+            if (i == 0) {
+                filmeFavorito = listaFilme[i]
+            }
+            if (i == 2) {
+                terceiroFilmeFavorito = listaFilme[i]
+            }
+        }
+        div_filme.innerHTML = `Seu filme favorito: ${filmeFavorito}<br>
+        Seu 3º filme favorito: ${terceiroFilmeFavorito}<br> 
+            Total de filmes cadastrados: ${tamanhoLista}`; 
+    }
+</script>

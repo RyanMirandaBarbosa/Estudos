@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Economia: <input type="number" id="input_economia"><br>
+    <button onclick="calculo ()">Poder de compra</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+</html>
+
+<script>
+    function calculo () {
+        var economia = Number(input_economia.value);
+        if (economia <= 0) div_mensagem.innerHTML = `Nada de compras ;-;`;
+        else div_mensagem.innerHTML = `Viajem de ida e volta pra Praia Grande<br>`;
+        if (economia > 100) div_mensagem.innerHTML += `Uma boa moto usada<br>`;
+        if (economia > 4000) div_mensagem.innerHTML += `Mais alguma bobagem legal<br>`;
+    }
+</script>

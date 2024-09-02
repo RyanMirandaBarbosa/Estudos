@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+<body>
+    Nome do bairro: <input type="text" id="input_nome_bairro"><br>
+
+    <button onclick="cadastrar()">Cadastrar</button><br>
+
+    Local onde morou, a partir do número 1 <input type="text" id="input_numero_local"><br>
+
+    <button onclick="relembrar()">Relembrar moradia</button><br>
+
+    <div id="div_moradia"></div><br>
+</body>
+</html>
+
+<script>
+    var listaEndereço = [];
+
+    function cadastrar() {
+        var bairro = input_nome_bairro.value;
+        listaEndereço.push(bairro);
+    }
+    
+    function relembrar() {
+        var num = input_numero_local.value;
+        var tamanhoLista = listaEndereço.length;
+        div_moradia.innerHTML = "";
+        if (num <= tamanhoLista) {
+            var nomeMoradia = "";
+            for (var i = 0; i <= tamanhoLista; i++) {
+                nomeMoradia = listaEndereço[i - 1]
+                if (i == num) {
+                    div_moradia.innerHTML = `${num}° moradia, bairro ${nomeMoradia}`;
+                }
+            }
+        } else {
+            div_moradia.innerHTML = `Você ainda não morou em ${num} bairros!`;
+        }
+    }
+</script>

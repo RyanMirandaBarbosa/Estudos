@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break</title>
+</head>
+<body>
+    Contar até... <input type="text" id="input_numero"><br>
+    <button onclick="Contar ()">Contar</button>
+    <div id="div_numeros"></div><br>
+</body>
+</html>
+
+<script>
+    function Contar () {
+        var numero = Number(input_numero.value);
+        var contador = 0;
+        div_numeros.innerHTML = "";
+        while (true) {
+            if (contador == numero)
+            break;
+            contador += 1;
+            div_numeros.innerHTML += `${contador}<br>`;
+        }
+    }
+</script>

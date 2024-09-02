@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>at6</title>
+</head>
+<body style="background-color: grey;">
+    Qual é o time grande de São Paulo que Você torce? <input type="text" id="input_time"><br>
+    <button onclick="time ()">Fale sobre esse time</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+</html>
+
+<script>
+    function time () {
+        var time = input_time.value;
+        if (time == "Corinthians") div_mensagem.innerHTML = 
+            `<br><span style="color:white; background-color:black;">Salve o Corinthians</span>`;
+        else if (time == "Palmeiras") div_mensagem.innerHTML = 
+            `<br><span style="color:white; background-color:green;">Salve o alviverde imponente</span>`;
+        else if (time == "Santos") div_mensagem.innerHTML = 
+            `<br><span style="color:black; background-color:white;">Agora quem dá a bola é o Santos</span>`;
+        else if (time == "São Paulo") div_mensagem.innerHTML = 
+            `<br><span style="color: red; background-color: black;">Salve o Tricolor paulista</span>`;
+        else alert("O time não é valido");
+    }
+</script>

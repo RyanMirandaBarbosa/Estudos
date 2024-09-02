@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 26</title>
+</head>
+<body>
+    Número: <input type="text" id="input_numero"><br>
+    <button onclick="somar ()">Somar Pares</button><br>
+    <div id="div_soma"></div><br>
+</body>
+</html>
+
+<script>
+    function somar () {
+        var numero = Number(input_numero.value);
+        var somaTotal = 0;
+        div_soma.innerHTML = "";
+        if (numero >= 10 && numero <= 500) {
+            for (var i = 2; i <= numero; i += 2) {
+                somaTotal += i;
+                div_soma.innerHTML += `${i}<br>`;
+            }
+        } else {
+            alert("numero deve estar entre 10 e 500");
+        } 
+        div_soma.innerHTML += `Soma dos pares: ${somaTotal}<br>`;
+    }
+</script>

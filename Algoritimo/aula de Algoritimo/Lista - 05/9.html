@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Meta de economia: <input type="text" id="input_economia"><br>
+    Quanto tem gurdado? <input type="text" id="input_guardado"><br>
+    <button onclick="calculo ()">Analisar economia</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+</html>
+
+<script>
+    function calculo () {
+        var meta = Number(input_economia.value);
+        var guardado = Number(input_guardado.value);
+        if (guardado == meta) {
+            div_mensagem.innerHTML = `Parabéns, meta alcançada!`;
+        } else {
+            if (guardado > meta) {
+                var guardado_a_mais = guardado - meta;
+                div_mensagem.innerHTML += `<br>Meta ultrapassada em ${guardado_a_mais}`
+            }
+            else {
+                if (guardado < meta) {
+                    var falta_guardar = meta - guardado;
+                    div_mensagem.innerHTML = ` Força! Ainda em busca da meta! Falta ${falta_guardar}`
+                }
+            }
+
+        }
+    }
+</script>

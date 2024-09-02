@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7</title>
+</head>
+<body>
+    Filmes: <input type="text" id="input_filme"><button onclick="cadastro()">Cadastrar filme</button><br>
+    <div id="div_filme"></div>
+</body>
+</html>
+
+<script>
+    var listaFilme = [];
+
+    function cadastro() {
+        var filme = input_filme.value;
+        listaFilme.push(filme);
+        var qtdFilme = listaFilme.length;
+        var aux = 1;
+        div_filme.innerHTML = "";
+        for(var i = 0; i < qtdFilme; i++) {
+            var filmeAtual = listaFilme[i];
+            
+            if (aux == 1) {
+                div_filme.innerHTML += `<span style="color: blue;">${filmeAtual}<br></span>`;
+                aux++;
+            } else {
+                div_filme.innerHTML += `<span style="color: red;">${filmeAtual}<br></span>`;
+                aux = 1;
+            }
+        }
+    }
+</script>

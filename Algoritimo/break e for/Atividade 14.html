@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 14</title>
+</head>
+<body>
+    Idade: <input type="text" id="input_idade" onkeyup="ver ()"><br>
+    <div id="mensagem"></div><br>
+</body>
+</html>
+
+<script>
+    function ver () {
+        mensagem.innerHTML = "";
+        var idade = Number(input_idade.value);
+        for (var i = 0; i <= idade; i++) {
+            if (i >= 0 && i <= 4) {
+                mensagem.innerHTML += `${i} anos (Primeira Infância)<br>`;
+            } else if (i > 4 && i <= 6) {
+                mensagem.innerHTML += `${i} anos (Pré-escolar)<br>`;
+            } else if (i > 6 && i <= 10) {
+                mensagem.innerHTML += `${i} anos (Segunda Infância)<br>`;
+            } else if (i > 10 && i <= 18) {
+                mensagem.innerHTML += `${i} anos (Adolescência)<br>`;
+            } else if (i > 18 && i <= 50) {
+                mensagem.innerHTML += `${i} anos (Adulto)<br>`;
+            } else if (i > 50 && i <= 100) {
+                mensagem.innerHTML += `${i} anos (Melhor idade)<br>`;
+            } else if (i > 100) {
+                mensagem.innerHTML += `${i} anos (Matusalém)<br>`;
+            }
+        }
+    }
+</script>

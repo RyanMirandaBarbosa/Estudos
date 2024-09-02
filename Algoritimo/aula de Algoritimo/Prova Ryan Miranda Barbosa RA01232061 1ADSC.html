@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantidade de energia consumida em kWh: <input type="number" id="input_kwh"><br>
+    Bandeira tarifária da energia: (aceito apenas "vermelha", "amarela" ou "verde") <input type="text"
+        id="input_bandeira"><br>
+    Volume de água consumido em litros: <input type="number" id="input_agua"><br>
+    Quantidade de vazamentos de água na casa: <input type="number" id="input_vazamento"><br>
+    Volume de gás consumido em litros: <input type="number" id="input_gas"><br>
+    Valor base do plano de internet: <input type="number" id="input_internet"><br>
+    Há uma linha telefônica vinculada ao plano de internet? (este campo só aceita "sim" ou "não") <input type="text" id="input_telefonico"><br>
+    <button onclick="calculo ()">Calcular Despesas Fixas</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+
+</html>
+
+<script>
+    function calculo() {
+        var kwh = Number(input_kwh.value);
+        var bandeira = input_bandeira.value;
+        var agua = Number(input_agua.value);
+        var vazamentos_agua = Number(input_vazamento.value);
+        var gas = Number(input_gas.value);
+        var gas_total = gas * 2.5;
+        var internet = Number(input_internet.value);
+        var plano_telefonico = input_telefonico.value;
+        if (kwh <= 50) {
+            if (bandeira == "verde") {
+                var kwh_preco = (kwh * 0.75) * 0.9;
+            } else {
+                if (bandeira == "amarela") {
+                    var kwh_preco = (kwh * 0.9) * 0.9;
+                } else {
+                    if (bandeira == "vermelha") {
+                        var kwh_preco = (kwh * 1) * 0.9;
+                    }
+                }
+            }
+        } else {
+            if (bandeira == "verde") {
+                var kwh_preco = kwh * 0.75;
+            } else {
+                if (bandeira == "amarela") {
+                    var kwh_preco = kwh * 0.9;
+                } else {
+                    if (bandeira == "vermelha") {
+                        var kwh_preco = kwh * 1;
+                    }
+                }
+            }
+        }
+        if (vazamentos_agua <= 0) {
+            var agua_total = agua * 3.5;
+        } else {
+            if (vazamentos_agua > 0) {
+                var agua_total = agua * 3.5 + (vazamentos_agua * 10);
+            }
+        }
+        if (plano_telefonico == "sim") {
+            var internet_2 = internet * 1.25;
+        } else {
+            if (plano_telefonico == "não") {
+                var internet_2 = internet;
+            }
+        }
+        div_mensagem.innerHTML = `Com o consumo de ${kwh} kWh na bandeira ${bandeira}, a conta de energia totaliza R$${kwh_preco}.
+        Com o consumo de ${agua} litros de água contendo ${vazamentos_agua} vazamentos, a conta de água totaliza R$${agua_total}.
+        Com o consumo de ${gas} litros de gás, a conta de gás totaliza R$${gas_total}.
+        Com um valor base de R$${internet} no plano de internet , a conta de internet/telefone totaliza R$${internet_2}.
+        Gasto total de despesas mensal: R$${kwh_preco + agua_total + gas_total + internet_2}.`;
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6</title>
+</head>
+<body>
+    Nome: <input id="input_nome" type="text"><br>
+    Quanto a ama (um número inteiro): <input type="text" id="input_amor"><br>
+    <button onclick="amor ()">Expressar amor</button><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function amor () {
+        var nome = input_nome.value;
+        var amor = Number(input_amor.value); 
+        var vezes = 0;
+        div_mensagem.innerHTML = "";
+        while (vezes < amor) {
+            vezes = vezes + 1;
+            div_mensagem.innerHTML += `${nome}, eu te amo! Sempre lembre disso!<br>`;
+        }
+    }
+</script>

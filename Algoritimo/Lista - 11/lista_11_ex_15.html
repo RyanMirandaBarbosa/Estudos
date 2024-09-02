@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Nome do Produto: <input type="text" id="input_produto"> <br>
+    Preço do Produto: <input type="text" id="input_preco"> <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="relatorio()">Relatório de Estoque</button>
+
+    <div id="div_produtos"></div>
+    
+</body>
+</html>
+
+<script>
+    var listaProdutos = []; // lista de nomes dos produtos
+    var listaPrecos = [];   // lista de preços dos produtos
+
+    function cadastrar() {
+        var produto = input_produto.value;
+        var preco = input_preco.value;
+        
+        listaProdutos.push(produto);
+        listaPrecos.push(preco);
+    }
+
+    function relatorio() {
+        var maiorProdutoDaLista = listaProdutos[0]; // define o nome do maior produto como o primeiro elemento da lista de PRODUTOS
+        var maiorPrecoDaLista = listaPrecos[0];     // define o maior preço como o primeiro elemento da lista de PREÇOS
+        
+        var menorProdutoDaLista = listaProdutos[0]; // define o nome do menor produto como o primeiro elemento da lista de PRODUTOS
+        var menorPrecoDaLista = listaPrecos[0];     // define o menor preço como o primeiro elemento da lista de PREÇOS
+        /*  com as variáveis auxiliares acima, a cada repetição, podemos comparar se o produto atual é menor ou maior aos valores armazenados nas variáveis
+            ou seja, caso o preço do produto que está sendo percorrido seja MENOR que o armazenado na variável "menorPrecoDaLista", significa que ele deve ser o novo "menorPrecoDaLista"
+            assim como caso o preço do produto que está sendo percorrido seja MAIOR que o armazenado na variável "maiorPrecoDaLista", significa que ele deve ser o novo "maiorPrecoDaLista"  */
+
+        var somaPrecosCompra = 0; // define a variável com soma de PREÇOS DE COMPRA, começando com 0
+        var somaPrecosVenda = 0;  // define a variável com soma de PREÇOS DE VENDA, começando com 0
+
+        div_produtos.innerHTML = `Total de produtos: <b>${listaProdutos.length}</b><br><br>`;
+
+        for (
+            var i = 0; 
+            i < listaProdutos.length && i < listaPrecos.length; 
+            i++
+        ) {
+            var produtoAtual = listaProdutos[i];          // obtém o produto no índice [i] que está sendo percorrido com base no valor do contador "i"
+            var precoAtual = Number(listaPrecos[i]);      // obtém o preço no índice [i] que está sendo percorrido com base no valor do contador "i"
+
+            var precoVenda = precoAtual * 1.25;           // incrementa em 25% o preço do produto atual
+
+            somaPrecosCompra += precoAtual;               // adiciona o preço de COMPRA do produto atual na soma de preços de COMPRA
+            somaPrecosVenda += precoVenda;                // adiciona o preço de VENDA do produto atual na soma de preços de VENDA
+
+            if (precoAtual < menorPrecoDaLista) {         // se o preço do produto atual for menor que o preço armazenado na variável "menorPrecoDaLista"
+                menorPrecoDaLista = precoAtual;           // o preço do produto atual passa a ser o menor preço
+                menorProdutoDaLista = produtoAtual;       // o nome do produto atual passa a ser o menor produto
+            }
+
+            if (precoAtual > maiorPrecoDaLista) {         // se o preço do produto atual for maior que o preço armazenado na variável "maiorPrecoDaLista"
+                maiorPrecoDaLista = precoAtual;           // o preço do produto atual passa a ser o maior preço
+                maiorProdutoDaLista = produtoAtual;       // o nome do produto atual passa a ser o maior produto
+            }
+
+            div_produtos.innerHTML += `
+                Produto ${i+1}: <b>${produtoAtual}</b> <br>
+                Preço de compra: R$<b>${precoAtual}</b>.
+                Vender por: R$<b>${precoVenda}</b>
+                <br> <br>
+            `;
+        } // fim do FOR
+
+        var mediaPrecoVenda = somaPrecosVenda / listaPrecos.length; // pode usar o "listaProdutos.length" também, afinal, possuem o mesmo tamanho 
+
+        div_produtos.innerHTML += `
+            Produto mais caro: <b>${maiorProdutoDaLista}</b> - R$<b>${maiorPrecoDaLista}</b> <br>
+            Produto mais barato: <b>${menorProdutoDaLista}</b> - R$<b>${menorPrecoDaLista}</b> <br>
+            Soma dos preços de compra dos produtos: R$<b>${somaPrecosCompra}</b> <br>
+            Média dos preços de venda dos produtos: R$<b>${mediaPrecoVenda}</b>
+        `
+    }
+</script>

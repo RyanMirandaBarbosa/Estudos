@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Temperatura do ambiente: <input type="text" id="input_temperatura"><br>
+    <button onclick="calculo ()">Verificar clima</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+</html>
+
+<script>
+    function calculo () {
+        var temperatura = Number(input_temperatura.value);
+        if (temperatura < 10) { 
+            div_mensagem.innerHTML = `<img src="https://www.iped.com.br/_upload/content/2015/03/03/identificar-alimentos-bom-estado.jpg" alt="">`
+        } else {
+            if (temperatura >= 10) {
+                div_mensagem.innerHTML = `<img src="https://ichef.bbci.co.uk/news/800/cpsprodpb/F0F1/production/_117518616_gettyimages-1131417684.jpg" alt="">`
+            }
+        }
+    }
+
+</script>

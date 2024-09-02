@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 16</title>
+</head>
+<body>
+    Digite um número qualquer: <input type="text" id="input_num"><button onclick="num()">Analisar histórico</button><br>
+    <div id="div_num"></div>
+</body>
+</html>
+
+<script>
+    var listNum = [];
+
+    function num() {
+        var num = Number(input_num.value);
+        listNum.push(num);
+        var qtdNum = listNum.length;
+        var maiorNum = listNum[0];
+        var menorNum = listNum[0];
+
+        div_num.innerHTML = "";
+
+        for (var i = 0; i < qtdNum; i++) {
+            var numAtual = listNum[i];
+            
+            div_num.innerHTML += `${i}º Número: ${numAtual}.<br>`;
+
+            if (numAtual > maiorNum) {
+                maiorNum = numAtual;
+            }
+            if (numAtual < menorNum) {
+                menorNum = numAtual;
+            }
+        }
+
+        div_num.innerHTML += `<br><br><br>
+        Maior: ${maiorNum}.<br>
+        Menor: ${menorNum}.
+        `;
+    }
+</script>

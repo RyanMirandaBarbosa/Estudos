@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Ver tabuada do número: <input type="text" id="input_numero">
+    <button onclick="calcular ()">Ver tabuada</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular () {
+        var num = Number(input_numero.value);
+        div_mensagem.innerHTML = `${num}x1=${num *1}<br>${num}x2=${num *2}<br>
+        ${num}x3=${num *3}<br>${num}x4=${num *4}<br>${num}x5=${num *5}<br>
+        ${num}x6=${num *6}<br>${num}x7=${num *7}<br>${num}x8=${num *8}<br>
+        ${num}x9=${num *9}<br>${num}x10=${num *10}`
+    }
+</script>

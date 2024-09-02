@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+</head>
+<body>
+    linhas de ônibus usadas durante a semana <input type="text" id="input_nome_linha"><button onclick="gravar()">Gravar busão</button><br>
+    <div id="div_listaBusao"></div>
+    pesquisar por uma linha que já tenha pego <input type="text" id="input_linha_usada"><button onclick="pesquisar()">Pesquisar</button><br>
+    <div id="div_linhasUsadas"></div>
+</body>
+</html>
+
+<script>
+    var listaBusao = [];
+
+    function gravar() {
+        var nome = input_nome_linha.value;
+        listaBusao.push(nome);
+        var tamanhoLista = listaBusao.length;
+        var exibirLista = "";
+        for (var i = tamanhoLista; i > 0; i--) {
+            var ultimoNome = listaBusao[i - 1];
+            exibirLista += `${ultimoNome}<br>`;
+        }
+        div_listaBusao.innerHTML = `${exibirLista}`;
+    }
+
+    function pesquisar() {
+    var nome = input_linha_usada.value;
+    var contadorLinha = 0;
+    var posicoesLinha = [];
+    var tamanhoLista = listaBusao.length;
+    for (var i = 0; i < tamanhoLista; i++) {
+      var linhaAtual = listaBusao[ i ];
+      if (linhaAtual.toLowerCase() == nome.toLowerCase()) {
+        contadorLinha++;
+        posicoesLinha.push(i + 1);
+      }
+    }
+    if (contadorLinha == 0) {
+        div_linhasUsadas.innerHTML = `Você nunca pegou essa linha`;
+    } else {
+        div_linhasUsadas.innerHTML = `Você já pegou essa linha ${contadorLinha} vezes, nessa ordem: ${posicoesLinha}`;
+    }
+    }
+</script>

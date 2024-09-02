@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de filhos: <input type="text" id="input_filhos"><br>
+    <button onclick="exiba ()">Analisar família</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function exiba () {
+        var filhos = Number(input_filhos.value);
+        if (filhos >= 1) {
+            div_mensagem.innerHTML = `Não tem TV`;
+        }
+        if (filhos >= 2) {
+            div_mensagem.innerHTML += `<br>Não tem internet`;
+        }
+        if (filhos >= 3) {
+            div_mensagem.innerHTML += `<br>Não tem video game"`;
+        }
+        if (filhos >= 4) {
+            div_mensagem.innerHTML += `<br>Não tem Netflix`;
+        }
+
+    }
+</script>

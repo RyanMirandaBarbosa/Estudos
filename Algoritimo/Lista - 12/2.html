@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    <button onclick="time()">Sortear time</button><br>
+    <div id="div_time"></div>
+</body>
+</html>
+
+<script>
+    function time() {
+        var time = Math.random() * 4;
+        time = Number(time.toFixed(0));
+        if (time == 1) {
+            div_time.innerHTML = `<img style="width: 150px;" src="./img/corinthias.png" alt="">`;
+        } else if (time == 2) {
+            div_time.innerHTML = `<img style="width: 150px;" src="./img/flamengo.png" alt="">`;
+        } else if (time == 3) {
+            div_time.innerHTML = `<img style="width: 150px;" src="./img/logo-palmeiras-1024.png" alt="">`;
+        } else {
+            div_time.innerHTML = `<img style="width: 150px;" src="./img/sp.png" alt=""> `;
+        }
+    }
+</script>

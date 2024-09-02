@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8</title>
+</head>
+<body>
+    Nome aluno: <input type="text" id="input_nome"><button onclick="cadastrar()">Cadastrar</button><br>
+    <div id="div_aluno"></div>
+</body>
+</html>
+
+<script>
+    var listaAlunos = []
+
+    function cadastrar() {
+        var nome = input_nome.value;
+        listaAlunos.push(nome);
+        var tamanhoLista = listaAlunos.length;
+        var exibirLista = "";
+        for (var i = tamanhoLista; i > 0; i--) {
+            var ultimoNome = listaAlunos[i - 1];
+            exibirLista += `${ultimoNome}<br>`;
+        }
+        div_aluno.innerHTML = `${exibirLista}`;
+    }
+</script>

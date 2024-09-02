@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 24</title>
+</head>
+<body>
+    Número: <input type="text" id="Input_numero"><br>
+    <button onclick="divisores ()">Ver Divisores</button><br>
+    <div id="div_divisores"></div><br>
+</body>
+</html>
+
+<script>
+    function divisores () {
+        var numero = Number(Input_numero.value);
+        var contador = 0;
+        div_divisores.innerHTML = ""; 
+        if (numero >= 0 && numero <= 100) {
+            div_divisores.innerHTML += `Divisores do numero ${numero}<br>`;
+            while (contador < numero) {
+                contador += 1;
+                if (numero % contador == 0) {
+                    div_divisores.innerHTML += `${contador}<br>`;
+                }
+            }
+        } else {
+            alert("O número não está entre 0 e 100.");
+        }
+    }
+</script>

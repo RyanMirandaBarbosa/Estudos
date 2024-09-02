@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9</title>
+</head>
+<body>
+    Nome de cada projeto que já criou na vida: <input type="text" id="input_nome">
+    <button onclick="registrar()">Registrar projeto</button><br>
+    <div id="div_qtdProjeto"></div>
+    <button onclick="exibirLista()">Mostrar Projetos</button>
+    <div id="div_mostrarProjetos"></div>
+</body>
+</html>
+
+<script>
+    var listaProjeto = [];
+
+    function registrar() {
+        var nomeProjeto = input_nome.value;
+        listaProjeto.push(nomeProjeto);
+        var qtdProjeto = listaProjeto.length;
+        var nivel = "";
+        if (qtdProjeto >= 0 && qtdProjeto <= 4) {
+            nivel = "Júnior";
+        } else  if (qtdProjeto >= 5 && qtdProjeto <= 12) {
+            nivel = "Pleno";
+        } else {
+            nivel = "Sênior";
+        }
+        div_qtdProjeto.innerHTML = `Você já fez ${qtdProjeto} projetos. Por isso você é um profissional
+        ${nivel}`;
+    }
+
+    function exibirLista() {
+        var qtdProjeto = listaProjeto.length;
+        var exibirLista = "";
+        for (var i = qtdProjeto; i > 0; i--) {
+            var ultimoNome = listaProjeto[i - 1];
+            exibirLista += `${ultimoNome}<br>`;
+        }
+        div_mostrarProjetos.innerHTML = `${exibirLista}`;
+    }
+</script>

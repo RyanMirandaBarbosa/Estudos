@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    Nota ENEM: <input type="text" id="input_nota_enem"><br>
+    Nota vestibular interno: <input type="text" id="input_nota_vestibular"><br>
+    <button onclick="avaliar ()">Avaliação</button><br>
+</body>
+</html>
+
+<script>
+    function avaliar () {
+        var nota_enem = input_nota_enem.value;
+        var nota_vestibular = input_nota_vestibular.value;
+        if (nota_enem >= 800 || nota_vestibular >= 700) {
+            alert("Parabéns! Aprovado");
+        } else {
+            alert("Tente semestre que vem!");
+        }
+    }
+</script>

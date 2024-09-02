@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Surpresa</title>
+</head>
+<body>
+    <!-- Crie um programa no qual o usuário registra as viagens de um astronauta a um lugar desses. Considere que, 1 minuto nesse lugar equivale a 49 minutos na Terra. Ou seja, o tempo passa 49x mais devagar lá (ou, o tempo passa 49x mais rápido na Terra). -->
+
+    <!-- a) O usuário informa:
+    a.1) Nome do astronauta;
+    a.2) Quantidade de dias;
+    a.3) Quantidade de horas;
+    a.4) Quantidade de minutos; -->
+
+    Nome do astronauta: <input type="text" id="input_nome"><br>
+    Quantidade de dias: <input type="text" id="input_qtdDias"><br>
+    Quantidade de horas: <input type="text" id="input_qtdHoras"><br>
+    Quantidade de minutos: <input type="text" id="input_qtdMinutos"><br>
+    <button onclick="registro()">Registrar viagem</button>
+    <button onclick="relatorio()">Relatório de viagens</button>
+    <div id="div_astronauta"></div> 
+</body>
+</html>
+
+<script>
+    var listaAustronauta = [];
+    var listaDias = [];
+    var listaHoras = [];
+    var listaMinutos = [];
+
+    function registro() {
+        var nome = input_nome.value;
+        var dias = Number(input_qtdDias.value);    
+        var horas = Number(input_qtdHoras.value);
+        var minutos = Number(input_qtdMinutos.value);
+
+        // b) Faça a seguinte validação:
+        // b.1) Pelo menos uma das três informações deve ser maior que 0 (zero);
+        if (dias > 0 || horas > 0 || minutos > 0) {
+            listaAustronauta.push(nome);
+            listaDias.push(dias);
+            listaHoras.push(horas);
+            listaMinutos.push(minutos);
+        } else {
+            alert ("Informe um tempo de viagem válido!");
+        }
+    }
+
+    function relatorio() {
+        var qdtViagens = listaAustronauta.length;
+        
+        div_astronauta.innerHTML = `Foram registradas ${qdtViagens} viagens, detalhadas a seguir:<br><br>`;
+
+        for (var i = 0; i < qdtViagens; i++) {
+            var astronautaAtual = listaAustronauta[i];
+            var diasEmMinutos = (listaDias[i] * 1440) * 49;
+            var horasEmMinutos = (listaHoras[i] * 60) * 49;
+            var minutosForaDaTerra = listaMinutos[i] * 49;
+            var AnosForaDaTerra = (diasEmMinutos + horasEmMinutos + minutosForaDaTerra) / 525600;
+            
+            if (AnosForaDaTerra <= 13) {
+                div_astronauta.innerHTML += `<br><br>
+                Astronauta ${astronautaAtual} ficou fora por pelo menos ${AnosForaDaTerra} anos no tempo da Terra.<br>
+                A criança que nasceu quando ele saiu provavelmente está assim:<br>
+                <img src="./ate13.png" alt=""><br>
+                `;
+            } else if (AnosForaDaTerra > 13 && AnosForaDaTerra <= 30) {
+                div_astronauta.innerHTML += `<br><br>
+                Astronauta ${astronautaAtual} ficou fora por pelo menos ${AnosForaDaTerra} anos no tempo da Terra.<br>
+                A criança que nasceu quando ele saiu provavelmente está assim:<br>
+                <img src="./mais de 13 ate 30.png" alt=""><br>
+                `;
+            } else if (AnosForaDaTerra > 30 && AnosForaDaTerra <= 65) {
+                div_astronauta.innerHTML += `<br><br>
+                Astronauta ${astronautaAtual} ficou fora por pelo menos ${AnosForaDaTerra} anos no tempo da Terra.<br>
+                A criança que nasceu quando ele saiu provavelmente está assim:<br>
+                <img src="./mais de 30 ate 65.png" alt=""><br>
+                `;
+            } else if (AnosForaDaTerra > 65 && AnosForaDaTerra <= 100) {
+                div_astronauta.innerHTML += `<br><br>
+                Astronauta ${astronautaAtual} ficou fora por pelo menos ${AnosForaDaTerra} anos no tempo da Terra.<br>
+                A criança que nasceu quando ele saiu provavelmente está assim:<br>
+                <img src="./mais de 65 ate 100.png" alt=""><br>
+                `;
+            } else {
+                div_astronauta.innerHTML += `<br><br>
+                Astronauta ${astronautaAtual} ficou fora por pelo menos ${AnosForaDaTerra} anos no tempo da Terra.<br>
+                A criança que nasceu quando ele saiu provavelmente está assim:<br>
+                <img src="./mais de 100.png" alt=""><br>
+                `;
+            }
+        }
+    }
+</script>

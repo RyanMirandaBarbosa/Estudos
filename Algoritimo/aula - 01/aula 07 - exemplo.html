@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    nota 1: <input type="text" id="input_n1"><br>
+    nota 2: <input type="text" id="input_n2"><br>
+    <button onclick="avaliar ()">avaliar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function avaliar () {
+        var n1 = Number(input_n1.value);
+        var n2 = Number(input_n2.value);
+        var n_final = (n2 + n2) / 2;
+        
+        if (n_final > 6) {
+            div_mensagem.innerHTML = `aprovado`;
+        } else {
+            if (n_final < 6) {
+                div_mensagem.innerHTML = `reprovado`;
+            } else {
+                if (n_final == 6) {
+                    div_mensagem.innerHTML = `exatamente na média`;
+                }
+            }
+        }
+    }
+</script>

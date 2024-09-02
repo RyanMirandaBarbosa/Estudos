@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atvidade 4</title>
+</head>
+<body>
+    <button onclick="contar ()">S2 Pares</button><br>
+    <div id="div_contar"></div>
+</body>
+</html>
+
+<script>
+    function contar () {
+        var numero = 0;
+        div_contar.innerHTML = "";
+        while (numero < 100) {
+            numero = numero + 2;
+            div_contar.innerHTML += `${numero}<br>`;
+        }
+    }
+</script>

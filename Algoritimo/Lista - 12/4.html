@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+<body>
+    <button onclick="aluno()">Sortear Nota para aluno</button><br>
+    <div id="div_aluno"></div>
+</body>
+</html>
+
+<script>
+    function aluno() {
+        var aleatorio = 0 + Math.random() * 10;
+        aleatorio = Number(aleatorio.toFixed(1));
+        div_aluno.innerHTML = `${aleatorio}`;
+    }
+</script>

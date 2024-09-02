@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="07809f74-9eb6-4b52-818a-44f7ec41e230" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Algoritimo/Lista - 11/14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Algoritimo/Lista - 11/17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Algoritimo/Lista - 11/18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Aplicação GUTEIM/0abede85-0178-43f5-959a-78edcad7fc46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Aplicação GUTEIM/Algoritmo - entregável individual.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Aplicação GUTEIM/DB - entregável individual..sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Aplicação GUTEIM/calc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Aplicação GUTEIM/inicio calculadora.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Algoritimo/Lista - 11/12.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Algoritimo/Lista - 11/12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Algoritimo/Lista - 11/13.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Algoritimo/Lista - 11/13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Site-Institucional-Estatico/Tela Sobre_Nos/img/Beatriz-Marques.jpg" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2eKZSlbnrQjInMLKsH01oJQWzIB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.TesteBanco.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/RyanMirandaBarbosa/OneDrive - SPTech School/Área de Trabalho/Miranda_Repository/GitClass/encapsulamento",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.419" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.419" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="07809f74-9eb6-4b52-818a-44f7ec41e230" name="Changes" comment="" />
+      <created>1711655234745</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711655234745</updated>
+      <workItem from="1724789007249" duration="210000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas latinhas de refrigerantes você toma por dia? <input type="number" id="input_quantidade_latinhas_dia"> <br>
+    <button onclick="latinhas ()">latinhas por ano</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function latinhas () {
+        var latinhas_dia = Number(input_quantidade_latinhas_dia.value);
+        var latinhas_ano = latinhas_dia * 365;
+        div_mensagem.innerHTML = `Você consome ${latinhas_ano} latinhas por ano`;
+
+        if (latinhas_ano > 500) {
+            div_mensagem.innerHTML += `<br>Cuidado com diabetes`
+        }
+    }
+</script>

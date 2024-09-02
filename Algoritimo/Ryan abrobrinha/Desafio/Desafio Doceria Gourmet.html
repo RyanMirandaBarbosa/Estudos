@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Doceria Gourmet</title>
+</head>
+<body>
+    Quantidade de Macarons: <input type="text" id="input_macarons"><br>
+    Valor unitario Macarons: <input type="text" id="input_valor_macarons"><br>
+    <br><br>
+    Quantidade de Brigadeiros Gourmets: <input type="text" id="input_brigadeiro"><br>
+    Valor unitario Brigadeiros Gourmets: <input type="text" id="input_valor_brigadeiro"><br>
+    <br><br>
+    Quantidade de Cupcakes: <input type="text" id="input_cupcakes"><br>
+    Valor unitario Cupcakes: <input type="text" id="input_valor_cupcakes"><br>
+    <br><br>
+    Quantidade de Cheesecakes: <input type="text" id="input_cheesecakes"><br>
+    Valor unitario Cheesecakes: <input type="text" id="input_valor_cheesecakes"><br>
+    <br><br>
+    <button onclick="vendas ()">Verificar Vendas</button><br>
+    <br><br>
+    <div id="div_vendas"></div>
+</body>
+</html>
+
+<script>
+    function vendas () {
+        var qtMacarons = Number(input_macarons.value);
+        var qtBrigadeiros = Number(input_brigadeiro.value);
+        var qtCupcakes = Number(input_cupcakes.value);
+        var qtCheesecakes = Number(input_cheesecakes.value);
+        var valorMacarons = Number(input_valor_macarons.value);
+        var valorBrigadeiro = Number(input_valor_brigadeiro.value);
+        var valorCupcakes = Number(input_valor_cupcakes.value);
+        var valorCheesecakes = Number(input_valor_cheesecakes.value);
+        div_vendas.innerHTML = "";
+        var contadorMacarons = 0;
+        var contadorBrigadeiro = 0;
+        var contadorCupcakes = 0;
+        var contadorCheesecakes = 0;
+        var contadorVenda = 0;
+        var valoresValidos = qtMacarons >= 0 && valorMacarons >= 0 && qtBrigadeiros >= 0 && valorBrigadeiro >= 0 && qtCupcakes >= 0 && valorCupcakes >= 0 && qtCheesecakes >= 0 && valorCheesecakes >= 0;
+        var vendaTotalMacarons = valorMacarons * qtMacarons;
+        var vendaTotalBrigadeiros = valorBrigadeiro * qtBrigadeiros;
+        var vendaTotalCupcakes = valorCupcakes * qtCupcakes;
+        var vendaTotalCheesecakes = valorCheesecakes * qtCheesecakes;
+        var vendaTotal = vendaTotalMacarons + vendaTotalBrigadeiros + vendaTotalCupcakes + vendaTotalCheesecakes;
+        if (valoresValidos == true) {
+            while (contadorMacarons < qtMacarons) {
+                contadorMacarons += 1;
+                contadorVenda += 1;
+                div_vendas.innerHTML += `NÚMERO DA VENDA ${contadorVenda}<br><img style="width: 100px;" src="https://www.estadao.com.br/resizer/5q1sDaC4qZoYq5Q87HJfUlen9Tg=/720x503/filters:format(jpg):quality(80):focal(579x1254:589x1264)/cloudfront-us-east-1.images.arcpublishing.com/estadao/SFYPBGYE75GDJENLY7475OLBQM.jpeg" alt=""><br>VALOR UNITÁRIO: R$${valorMacarons}<br><br>`;
+            }
+            while (contadorBrigadeiro < qtBrigadeiros) {
+                contadorBrigadeiro += 1;
+                contadorVenda += 1;
+                div_vendas.innerHTML += `NÚMERO DA VENDA ${contadorVenda}<br><img style="width: 100px;" src="https://harald.com.br/wp-content/uploads/2020/04/briadeirogormet-melken-700x520-1.jpg" alt=""><br>VALOR UNITÁRIO: R$${valorBrigadeiro}<br><br>`;
+            }
+            while (contadorCupcakes < qtCupcakes) {
+                contadorCupcakes += 1;
+                contadorVenda += 1;
+                div_vendas.innerHTML += `NÚMERO DA VENDA ${contadorVenda}<br><img style="width: 100px;" src="https://imagem.band.com.br/f_475797.jpg" alt=""><br>VALOR UNITÁRIO: R$${valorCupcakes}<br><br>`;
+            }
+            while (contadorCheesecakes < qtCheesecakes) {
+                contadorCheesecakes += 1;
+                contadorVenda += 1;
+                div_vendas.innerHTML += `NÚMERO DA VENDA ${contadorVenda}<br><img style="width: 100px;" src="https://oficinadeinverno.com.br/cdn/shop/articles/gluten-free-new-york-cheesecake-1450985-hero-01-dc54f9daf38044238b495c7cefc191fa.jpg?v=1659309704" alt=""><br>VALOR UNITÁRIO: R$${valorCheesecakes}<br><br>`;
+            }
+        } else {
+            alert("Algum Campo foi preenchido com um valor menor que 0.");
+        }
+        div_vendas.innerHTML += `Com a quantidade de ${qtMacarons} Macarons, ${qtBrigadeiros} Brigadeiros, ${qtCupcakes} Cupcakes e ${qtCheesecakes} Cheesecakes, a venda totalizará R$${vendaTotal}<br><br><br><br><br><br><br><br><br><br><br><br>`;
+    }
+</script>

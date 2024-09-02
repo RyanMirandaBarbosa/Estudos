@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 20</title>
+</head>
+<body>
+    Quantidade de depósitos: <input type="text" id="input_quantidade_deposito"><br>
+    Valor depósito: <input type="text" id="input_valor_deposito"><br>
+    <button onclick="deposito ()">Acompanhar grana</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+</html>
+
+<script>
+    function deposito () {
+        var qtDeposito = Number(input_quantidade_deposito.value);
+        var valorDeposito = Number(input_valor_deposito.value);
+        var contador = 0;
+        var valorMes = 0;
+        div_mensagem.innerHTML = "";
+        while (contador < qtDeposito) {
+            contador = contador + 1;
+            valorMes += valorDeposito;
+            div_mensagem.innerHTML += `${contador}° Mês: ${valorMes}<br>`;
+        }
+    }
+</script>

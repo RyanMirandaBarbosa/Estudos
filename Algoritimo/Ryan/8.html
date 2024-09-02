@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>at8</title>
+</head>
+<body>
+    Quantos pães franceses são consumidos por dia: <input type="text" id="input_pao"><br>
+    Quantos pacotes de bolacha recheada são consumidos por dia: <input type="text" id="input_bolacha"><br>
+    Quantos copos de achocolatado são consumidos por dia: <input type="text" id="input_achocolatado"><br>
+    <button onclick="calculo ()">Verificar calorias</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+</html>
+
+<script>
+    function calculo () {
+        var pao = Number(input_pao.value * 50);
+        var bolacha = Number(input_bolacha.value * 80);
+        var achocolatado = Number(input_achocolatado.value * 70);
+        var total_cal = pao + bolacha + achocolatado;
+        if (total_cal < 200) div_mensagem.innerHTML = "Parabéns, vai ficar em forma !"; 
+        else if (total_cal <= 400) div_mensagem.innerHTML = "Cuidado, vai ficar menos saudável !";
+        else div_mensagem.innerHTML = "Alerta crítico de saúde !!!";
+    }
+</script>

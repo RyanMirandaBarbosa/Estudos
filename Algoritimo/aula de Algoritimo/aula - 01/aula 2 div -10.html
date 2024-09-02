@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    n1: <input type="text" id="input_n1"><br><br>
+    n2: <input type="text" id="input_n2"><br><br>
+
+    <button onclick="soma ()">soma</button>
+    <div id="div_soma"></div><br>
+
+    <button onclick="subtração ()">subtração</button>
+    <div id="div_subtração"></div><br>
+
+    <button onclick="multiplicação ()">multiplicação</button>
+    <div id="div_multiplicação"></div><br>
+
+    <button onclick="divisão ()">divisão</button>
+    <div id="div_divisão"></div><br>
+</body>
+</html>
+
+<script>
+
+function soma () {
+    var n1 = Number(input_n1.value);
+    var n2 = Number(input_n2.value);
+    div_soma.innerHTML = `<p> ${n1 + n2} </p>`;
+}
+function subtração () {
+    var n1 = Number(input_n1.value);
+    var n2 = Number(input_n2.value);
+    div_subtração.innerHTML = `<p> ${n1 - n2} </p>`;
+}
+function multiplicação () {
+    var n1 = Number(input_n1.value);
+    var n2 = Number(input_n2.value);
+    div_multiplicação.innerHTML = `<p> ${n1 * n2} </p>`;
+}
+function divisão () {
+    var n1 = Number(input_n1.value);
+    var n2 = Number(input_n2.value);
+    div_divisão.innerHTML = `<p> ${n1 / n2} </p>`;
+}
+</script>
+ 

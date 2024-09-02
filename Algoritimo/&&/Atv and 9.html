@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9</title>
+</head>
+
+<body style="background-color: #474747; color: white;">
+    Intervalo da altura desejada para os próximos pilotos: <br>
+    Min: <input type="text" id="input_altura_min"> Max: <input type="text" id="input_altura_max"><br>
+    OBS: A altura Min tem que ser maior ou igual a 1 e a altura Max tem que ser maior que a altura inicial. <br><br>
+    Nome do candidato: <input type="text" id="input_nome"><br>
+    Altura do candidato: <input type="text" id="input_altura_cadidato"><br>
+    <button onclick="avaliar ()">Avaliar</button><br><br>
+    <div id="div_mensagem"></div><br>
+</body>
+
+</html>
+
+<script>
+    function avaliar() {
+        var altura_min = Number(input_altura_min.value);
+        var altura_max = Number(input_altura_max.value);
+        var nome = input_nome.value;
+        var altura_candidato = Number(input_altura_cadidato.value);
+        if (altura_min >= 1) {
+            if (altura_max <= altura_min) {
+                alert("Altura Max é menor que a Altura Min");
+            } else if (altura_candidato >= altura_min && altura_candidato <= altura_max) {
+                div_mensagem.innerHTML += `O candidato ${nome} com altura de ${altura_candidato} participará do processo de seleção de piloto <br><br>`;
+            } else {
+                div_mensagem.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altura_candidato} não atende os requisitos<br><br>`;
+            }
+        } else {
+            alert("Valor Min é menor que 1.");
+        }
+    }
+</script>

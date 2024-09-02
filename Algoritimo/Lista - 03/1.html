@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Horas dormidas: <input type="text" id="input_horas_dormidas">
+    <button onclick="calculo_sono ()">Calcular sono</button>
+    <div id="div_a_mimir"></div>
+</body>
+</html>
+
+<script>
+
+function calculo_sono () {
+    var a_mimir = Number(input_horas_dormidas.value);
+    div_a_mimir.innerHTML = `<p>horas na fase 1: ${a_mimir * 0.05}<br>horas na fase 2: ${a_mimir * 0.45}
+    <br>horas na fase 3: ${a_mimir * 0.3} <br>horas na fase rem: ${a_mimir * 0.2}</p>`;
+}
+
+</script>

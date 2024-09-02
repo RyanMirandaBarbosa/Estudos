@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>at2</title>
+</head>
+<body>
+    Renda familiar mensal: <input type="text" id="input_renda_familiar_mensal"><br>
+    <button onclick="calculo ()">Analisar Renda</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+</html>
+
+<script>
+    function calculo () {
+        var rfm = Number(input_renda_familiar_mensal.value);
+        if (rfm < 250) div_mensagem.innerHTML = "Classe E";
+        else if (rfm <= 900) div_mensagem.innerHTML = "Classe D";
+        else if (rfm <= 2500) div_mensagem.innerHTML = "Classe C";
+        else if (rfm <= 9500) div_mensagem.innerHTML = "Classe B";
+        else div_mensagem.innerHTML = "Classe A";
+    }
+</script>

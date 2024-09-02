@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Atividade 15</title>
+</head>
+<body>
+    Quantidade de elefantes: <input type="text" id="input_elefante"><br>
+    <button onclick="exibir ()">Atazanar a médium</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+</html>
+
+<script>
+    function exibir () {
+        var elefante = Number(input_elefante.value);
+        var contador = 1;
+        var frase = "incomodam, ";
+        while (contador < elefante) {
+            contador = contador + 1;
+            frase = frase + " incomodam,";
+            div_mensagem.innerHTML += `1 elefante incomoda muita gente!<br>
+            ${contador} elefantes, ${frase} muito mais!<br>`;
+        }
+    }
+</script>
